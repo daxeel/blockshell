@@ -12,6 +12,13 @@ So, by using BlockShell anyone can learn following blockchain concepts,
 * Mining
 * Proof of Work
 
+## BlockShell Web Explorer
+<p>BlockShell comes with built-in blockchain explorer by which you can actully see how blocks are mined and what is stored and where.</p>
+
+Latest Mined Blocks             |  Block Details
+:------------------------------:|:-------------------------:
+![](https://preview.ibb.co/iZa5jG/Screen_Shot_2018_01_25_at_11_25_22_PM.png)  |  ![](https://preview.ibb.co/cDB0Jb/Screen_Shot_2018_01_25_at_11_25_35_PM.png)
+
 ## Installation
 Step 1 - Create project directory
 ```
