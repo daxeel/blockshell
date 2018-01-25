@@ -1,7 +1,9 @@
 # BlockShell
-A command line utility for learning Blockchain.
+A command line utility for learning Blockchain technical concepts likechaining, mining, proof of work etc.
 
-<img src="https://preview.ibb.co/dhC7yb/Logomakr_5g_Ei_Dw.png" height="200">
+BlockShell Logo                 |  BlockShell CLI
+:------------------------------:|:-------------------------:
+![](https://preview.ibb.co/dhC7yb/Logomakr_5g_Ei_Dw.png)  |  ![](https://preview.ibb.co/h8OfJb/Screen_Shot_2018_01_25_at_11_51_03_PM.png)
 
 ## About
 Anyone who wants to understand how blockchain technology works, then <b>BlockShell</b> should be a great start. Because I have created BlockShell keeping blockchain fundamentals in the center of development. With BlockShell you will actually create a tiny blockchain in your system where you can create blocks with data, explore blocks etc.
