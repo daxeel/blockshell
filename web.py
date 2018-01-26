@@ -39,8 +39,6 @@ def block(hash):
     for eachBlock in data:
         if eachBlock['hash'] == hash:
             return render_template('blockdata.html', data=eachBlock)
-        else:
-            return "No block found!"
 
 # Run flask app
 if __name__ == '__main__':
