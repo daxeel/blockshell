@@ -56,5 +56,15 @@ Step 7 - Try "blockshell" command and test installation!
 blockshell
 ```
 
+## Lanuch BlockShell Web
+Step 1 - Start new terminal window, go to cloned directory
+
+Step 2 - Start web.py
+```
+python web.py
+```
+
+Step 3 - Go to 127.0.0.1:5000 address in browser and boom!
+
 <b>Output in terminal after calling BlockShell command</b>
 <img src="https://image.ibb.co/dRqGrw/Screen_Shot_2018_01_25_at_11_21_38_PM.png">
