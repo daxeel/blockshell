@@ -1,11 +1,25 @@
 # -*- coding: utf-8 -*-
-# import modules
+# ==================================================
+# ==================== META DATA ===================
+# ==================================================
+__author__ = "Daxeel Soni"
+__url__ = "https://daxeel.github.io"
+__email__ = "daxeelsoni44@gmail.com"
+__license__ = "MIT"
+__version__ = "0.1"
+__maintainer__ = "Daxeel Soni"
+
+# ==================================================
+# ================= IMPORT MODULES =================
+# ==================================================
 import click
 import urllib
 import json
 from blockshell import Block, Blockchain
 
-# Supported commands
+# ==================================================
+# ===== SUPPORTED COMMANDS LIST IN BLOCKSHELL ======
+# ==================================================
 SUPPORTED_COMMANDS = [
     'dotx',
     'allblocks',
@@ -19,9 +33,14 @@ coin = Blockchain()
 # Create group of commands
 @click.group()
 def cli():
+    """
+        Create a group of commands for CLI
+    """
     pass
 
-# Start lbc cli
+# ==================================================
+# ============= BLOCKSHELL CLI COMMAND =============
+# ==================================================
 @cli.command()
 @click.option("--difficulty", default=3, help="Difine dufficulty level of blockchain.")
 def init(difficulty):
@@ -36,19 +55,23 @@ def init(difficulty):
 
  > A command line utility for learning Blockchain concepts.
  > Type 'help' to see supported commands.
+ > Project by Daxeel Soni - https://daxeel.github.io
 
     """
 
     # Set difficulty of blockchain
     coin.difficulty = difficulty
 
-    # Start lbc chell
+    # Start blockshell shell
     while True:
-        cmd = raw_input("[LBC] $ ")
+        cmd = raw_input("[BlockShell] $ ")
         processInput(cmd)
 
-# Process input from LBC shell
+# Process input from Blockshell shell
 def processInput(cmd):
+    """
+        Method to process user input from Blockshell CLI.
+    """
     userCmd = cmd.split(" ")[0]
     if len(cmd) > 0:
         if userCmd in SUPPORTED_COMMANDS:
@@ -58,10 +81,14 @@ def processInput(cmd):
             msg = "Command not found. Try help command for documentation"
             throwError(msg)
 
-# ------------------------------------
-# Supported Commands Methods
-# ------------------------------------
+
+# ==================================================
+# =========== BLOCKSHELL COMMAND METHODS ===========
+# ==================================================
 def dotx(cmd):
+    """
+        Do Transaction - Method to perform new transaction on blockchain.
+    """
     txData = cmd.split("dotx ")[-1]
     if "{" in txData:
         txData = json.loads(txData)
@@ -69,12 +96,18 @@ def dotx(cmd):
     coin.addBlock(Block(data=txData))
 
 def allblocks(cmd):
+    """
+        Method to list all mined blocks.
+    """
     print ""
     for eachBlock in coin.chain:
         print eachBlock.hash
     print ""
 
 def getblock(cmd):
+    """
+        Method to fetch the details of block for given hash.
+    """
     blockHash = cmd.split(" ")[-1]
     for eachBlock in coin.chain:
         if eachBlock.hash == blockHash:
@@ -83,9 +116,15 @@ def getblock(cmd):
             print ""
 
 def help(cmd):
+    """
+        Method to display supported commands in Blockshell
+    """
     print "Commands:"
     print "   dotx <transaction data>    Create new transaction"
     print "   allblocks                  Fetch all mined blocks in blockchain"
 
 def throwError(msg):
+    """
+        Method to throw an error from Blockshell.
+    """
     print "Error : " + msg
