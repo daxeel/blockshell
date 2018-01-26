@@ -1,142 +1,133 @@
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Blockshell | All Blocks</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="https://blackrockdigital.github.io/startbootstrap-bare/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <style>
-      body {
-        padding-top: 54px;
-      }
-      @media (min-width: 992px) {
-        body {
-          padding-top: 56px;
-        }
-      }
-
-      footer {
-    position: fixed;
-    height: 40px;
-    bottom: 0;
-    width: 100%;
-    background-color: #e7e7e7;
-    padding-left: 80px;
-    padding-top: 10px;
-    color: #000;
-
-}
-
-    </style>
-
-  </head>
-
-  <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">BlockShell</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">All Blocks
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-
-          </ul>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Blockshell Web for Blockshell CLI">
+        <meta name="author" content="Daxeel Soni">
+        <title>Blockshell | Block Data</title>
+        <!-- Bootstrap core CSS -->
+        <link href="https://blackrockdigital.github.io/startbootstrap-bare/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <style>
+            body {
+            padding-top: 54px;
+            }
+            @media (min-width: 992px) {
+            body {
+            padding-top: 56px;
+            }
+            }
+            footer {
+            position: fixed;
+            height: 40px;
+            bottom: 0;
+            width: 100%;
+            background-color: #e7e7e7;
+            padding-left: 80px;
+            padding-top: 10px;
+            color: #000;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="/">BlockShell</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Content -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10" style="margin-top:20px;">
+                    <h2><span class="badge badge-primary">{{data['hash']}}</span></h2>
+                    <br>
+                    <table class="table table-dark table-striped">
+                        <tr>
+                            <td><b>Height</b></td>
+                            <td>{{data['index']}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Timestamp</b></td>
+                            <td>{{data['timestamp']}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Data</b></td>
+                            <td>{{data['data']}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Hash</b></td>
+                            <td>{{data['hash']}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Previous Block Hash</b></td>
+                            <td>{{data['previousHash']}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Nonce</b></td>
+                            <td>{{data['nonce']}}</td>
+                        </tr>
+                    </table>
+                    <p class="lead">
+                    </p>
+                </div>
+                <div class="col-lg-2" style="margin-top:30px;">
+                    <div class="card" style="width: 13rem;">
+                        <img class="card-img-top" src="https://preview.ibb.co/e7SO4G/Logomakr_1rc0_PA.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">About Project</h5>
+                            <p class="card-text">Project BlockShell is created by with a vision to teach blockchain concepts to students and programmers.</p>
+                            <a href="https://daxeel.github.io" target="_blank" class="btn btn-primary">Contact Creator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </nav>
-
-    <!-- Page Content -->
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-10" style="margin-top:20px;">
-
-          <h2><span class="badge badge-primary">{{data['hash']}}</span></h2>
-          <br>
-
-          <table class="table table-dark table-striped">
-            <tr>
-              <td><b>Height</b></td>
-              <td>{{data['index']}}</td>
-            </tr>
-            <tr>
-              <td><b>Timestamp</b></td>
-              <td>{{data['timestamp']}}</td>
-            </tr>
-            <tr>
-              <td><b>Data</b></td>
-              <td>{{data['data']}}</td>
-            </tr>
-            <tr>
-              <td><b>Hash</b></td>
-              <td>{{data['hash']}}</td>
-            </tr>
-            <tr>
-              <td><b>Previous Block Hash</b></td>
-              <td>{{data['previousHash']}}</td>
-            </tr>
-            <tr>
-              <td><b>Nonce</b></td>
-              <td>{{data['nonce']}}</td>
-            </tr>
-          </table>
-
-
-
-          <p class="lead">
-
-          </p>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Blockshell Creator</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img class="card-img-top" src="https://image.ibb.co/nqzp4w/Daxeel_3.jpg" alt="Card image cap">
+                                <br><br>
+                                <a href="https://daxeel.github.io" target="_blank" class="btn btn-primary col-md-12">View Profile</a>
+                            </div>
+                            <div class="col-md-8">
+                                <h5 class="card-title">Daxeel Soni</h5>
+                                <p class="card-text">Young software engineer and with the passion of startup product building using tech skills. I am a co-lead of Facebook Developers Circle, Ahmedabad. A technology educator and speaker invited to various institutes and events such as IIM, Nirma, Google Developers Group, Facebook events etc.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
         </div>
-
-<div class="col-lg-2" style="margin-top:90px;">
-        <div class="card" style="width: 13rem;">
-        <img class="card-img-top" src="https://preview.ibb.co/e7SO4G/Logomakr_1rc0_PA.png" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">About Project</h5>
-          <p class="card-text">Project BlockShell is created by with a vision to teach blockchain concepts to students and programmers.</p>
-          <a href="https://daxeel.github.io" target="_blank" class="btn btn-primary">View Profile</a>
-        </div>
-        </div>
-</div>
-
-      </div>
-    </div>
-
-    <!-- <footer class="fixed-bottom">
-      <p>Project by <a href="https://daxeel.github.io" target="_blank">Daxeel Soni</a></p>
-    </footer> -->
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="https://blackrockdigital.github.io/startbootstrap-bare/vendor/jquery/jquery.min.js"></script>
-    <script src="https://blackrockdigital.github.io/startbootstrap-bare/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  </body>
-
-
-
+        <!-- <footer class="fixed-bottom">
+            <p>Project by <a href="https://daxeel.github.io" target="_blank">Daxeel Soni</a></p>
+            </footer> -->
+        <!-- Bootstrap core JavaScript -->
+        <script src="https://blackrockdigital.github.io/startbootstrap-bare/vendor/jquery/jquery.min.js"></script>
+        <script src="https://blackrockdigital.github.io/startbootstrap-bare/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    </body>
 </html>
