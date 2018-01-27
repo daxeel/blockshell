@@ -10,7 +10,8 @@ setup(
     py_modules=['bls'],
     install_requires=[
         'Click',
-        'colorama'
+        'colorama',
+        'flask'
     ],
     entry_points='''
         [console_scripts]
