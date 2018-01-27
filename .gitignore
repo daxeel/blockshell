@@ -1,7 +1,6 @@
 *.pyc
 chain.txt
-aaa/
+venv/
 build/
 dist/
 blockshell/
-blockshell.egg-info/
