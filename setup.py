@@ -7,13 +7,14 @@ setup(
     author_email = "daxeelsoni44@gmail.com",
     url = "https://daxeel.github.io",
     description = ("A command line utility for learning Blockchain concepts."),
-    py_modules=['bls'],
+    py_modules=['bscli'],
     install_requires=[
         'Click',
-        'colorama'
+        'colorama',
+        'flask'
     ],
     entry_points='''
         [console_scripts]
-        blockshell=bls:cli
+        blockshell=bscli:cli
     ''',
 )

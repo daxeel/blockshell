@@ -3,7 +3,7 @@
 import click
 import urllib
 import json
-from blockshell import Block, Blockchain
+from blockchain.chain import Block, Blockchain
 
 # Supported commands
 SUPPORTED_COMMANDS = [
@@ -44,7 +44,7 @@ def init(difficulty):
 
     # Start lbc chell
     while True:
-        cmd = raw_input("[LBC] $ ")
+        cmd = raw_input("[BlockShell] $ ")
         processInput(cmd)
 
 # Process input from LBC shell
@@ -86,6 +86,7 @@ def help(cmd):
     print "Commands:"
     print "   dotx <transaction data>    Create new transaction"
     print "   allblocks                  Fetch all mined blocks in blockchain"
+    print "   getblock <block hash>      Fetch information about particular block"
 
 def throwError(msg):
     print "Error : " + msg

@@ -2,12 +2,8 @@ from flask import Flask, render_template, jsonify
 import json
 
 app = Flask(__name__)
-# Index endpoint
-@app.route('/')
-def hello_world():
-    return "Blockshell"
 
-@app.route('/allblocks')
+@app.route('/')
 def blocks():
     f = open("chain.txt", "r")
     data = json.loads(f.read())

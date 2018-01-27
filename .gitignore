@@ -1,1 +1,7 @@
 *.pyc
+chain.txt
+aaa/
+build/
+dist/
+blockshell/
+blockshell.egg-info/
