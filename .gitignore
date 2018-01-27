@@ -4,3 +4,4 @@ venv/
 build/
 dist/
 blockshell/
+blockshell.egg-info/
