@@ -1,3 +1,5 @@
+README.md just includes installation guide. You can find detailed guide in this <a href="https://github.com/daxeel/blockshell/wiki/Get-Started-with-BlockShell" target="_blank">wiki page</a>
+
 # BlockShell
 A command line utility for learning Blockchain technical concepts likechaining, mining, proof of work etc.
 
@@ -58,9 +60,3 @@ blockshell
 
 <b>Output in terminal after calling BlockShell command</b>
 <img src="https://image.ibb.co/dRqGrw/Screen_Shot_2018_01_25_at_11_21_38_PM.png">
-
-## Get Started with BlockShell
-<a href="https://github.com/daxeel/blockshell/wiki/Get-Started-with-BlockShell" target="_blank">Check this article.</a>
-
-
-
