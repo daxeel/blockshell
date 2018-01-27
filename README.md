@@ -48,7 +48,7 @@ cd blockshell
 
 Step 6 - Install blockshell
 ```
-python setup.py install
+pip install --editable .
 ```
 
 Step 7 - Try "blockshell" command and test installation!
