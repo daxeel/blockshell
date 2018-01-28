@@ -1,4 +1,4 @@
-README.md just includes installation guide. You can find detailed guide in this <a href="https://github.com/daxeel/blockshell/wiki/Get-Started-with-BlockShell" target="_blank">wiki page</a>
+📖 README.md just includes installation guide. You can find detailed guide in this <a href="https://github.com/daxeel/blockshell/wiki/Get-Started-with-BlockShell" target="_blank">wiki page</a>
 
 # BlockShell
 A command line utility for learning Blockchain technical concepts likechaining, mining, proof of work etc.
@@ -6,7 +6,7 @@ A command line utility for learning Blockchain technical concepts likechaining, 
 <img src="https://image.ibb.co/mJFNGw/blockshell.gif">
 <img src="https://preview.ibb.co/dhC7yb/Logomakr_5g_Ei_Dw.png" height="80">
 
-## About
+## ℹ️ About
 Anyone who wants to understand how blockchain technology works, then <b>BlockShell</b> should be a great start. Because I have created BlockShell keeping blockchain fundamentals in the center of development. With BlockShell you will actually create a tiny blockchain in your system where you can create blocks with data, explore blocks etc.
 
 So, by using BlockShell anyone can learn following blockchain concepts,
@@ -15,14 +15,14 @@ So, by using BlockShell anyone can learn following blockchain concepts,
 * Mining
 * Proof of Work
 
-## BlockShell Web Explorer
+## 🌐 BlockShell Web Explorer
 <p>BlockShell comes with built-in blockchain explorer by which you can actully see how blocks are mined and what is stored and where.</p>
 
 Latest Mined Blocks             |  Block Details
 :------------------------------:|:-------------------------:
 ![](https://preview.ibb.co/iZa5jG/Screen_Shot_2018_01_25_at_11_25_22_PM.png)  |  ![](https://preview.ibb.co/cDB0Jb/Screen_Shot_2018_01_25_at_11_25_35_PM.png)
 
-## Installation
+## 📦 Installation
 Step 1 - Create project directory
 ```
 mkdir <project_name> && cd project_name
