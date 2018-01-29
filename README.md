@@ -30,7 +30,7 @@ Step 1 - Create project directory
 mkdir <project_name> && cd project_name
 ```
 
-Step 2 - Create new virtual environment
+Step 2 - Create new virtual environment with python version 2.7.
 ```
 virtualenv venv
 ```
