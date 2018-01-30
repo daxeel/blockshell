@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/david/dev/expressjs/express.svg"> [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=https%3A%2F%2Ftwitter.com%2Fintent%2Ftweet%3Ftext%3DLearn%20blockchain%2020%20minutes%20-%20https%3A%2F%2Fgithub.com%2Fdaxeel%2Fblockshell)
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Learn%20blockchain%2020%20minutes%20-%20https%3A%2F%2Fgithub.com%2Fdaxeel%2Fblockshell)
 
 📖 README.md just includes installation guide. You can find detailed guide in this <a href="https://github.com/daxeel/blockshell/wiki/Get-Started-with-BlockShell" target="_blank">wiki page</a>
 
