@@ -10,19 +10,17 @@ __version__ = "0.1"
 __maintainer__ = "Daxeel Soni"
 
 # ==================================================
-# ================= IMPORT MODULES =================
+# ================= Import Modules =================
 # ==================================================
 from flask import Flask, render_template, jsonify
 import json
 
-# Init flask app
+# Init Flask app
 app = Flask(__name__)
 
 @app.route('/')
 def mined_blocks():
-    """
-        Endpoint to list all mined blocks.
-    """
+    """ Endpoint to list all mined blocks. """
     f = open("chain.txt", "r")
     data = json.loads(f.read())
     f.close()
@@ -30,9 +28,7 @@ def mined_blocks():
 
 @app.route('/block/<hash>')
 def block(hash):
-    """
-        Endpoint which shows all the data for given block hash.
-    """
+    """   Endpoint which shows all the data for given block hash. """
     f = open("chain.txt", "r")
     data = json.loads(f.read())
     f.close()
@@ -40,6 +36,6 @@ def block(hash):
         if eachBlock['hash'] == hash:
             return render_template('blockdata.html', data=eachBlock)
 
-# Run flask app
+# Run Flask app
 if __name__ == '__main__':
     app.run(debug=True)
