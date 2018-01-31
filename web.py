@@ -18,6 +18,10 @@ import json
 # Init flask app
 app = Flask(__name__)
 
+# @app.route('/')
+# def index():
+#     return render_template('guide.html')
+
 @app.route('/')
 def mined_blocks():
     """

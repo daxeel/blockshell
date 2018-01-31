@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      #launch {
+        background: #000;
+        color: #fff;
+        padding: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: None;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <p><img src="https://image.ibb.co/dHkZyb/Logomakr_3_Of_FH7.png" height="100"></p>
+    <a href="#" id="launch">Launch BlockShell Web Explorer</a>
+<h2 id="introduction">🏁 Introduction</h2>
+<p>Blockshell works on blockchain concepts and it creates a tiny blockchain in your local system. So, you will actually learn the concepts like blocks, mining, hashing, proof of work and lot more.</p>
+<p>So, with blockshell you will be creating blocks with simple commands and rest of the tasks will be handled by Blockshell. In this wiki I will try to explain how Blockshell works behind every commands and how it is executing blockchain.</p>
+<p>Let’s get start!</p>
+<h2 id="initialize-new-blockchain">🆕 Initialize New Blockchain</h2>
+<p>First we will initialize the new blockchain with following command in blockshell CLI.</p>
+<pre><code>[BLOCKSHELL] $ blockshell init --difficulty 3</code></pre>
+<p>Above command initializes new blockchain and creates <strong>chain.txt</strong> in your working directory where our blockchain data will be stored. You can compare this chain.txt file as real world blockchain’s <strong>ledger</strong>.</p>
+<p><strong>–difficulty</strong> number indicates the difficulty level for blockchain’s proof of work. More the number, more time will be taken to mine new block in our blockchain.</p>
+<p>In our blockchain we have Initial Zeros Proof of Work algorithm. So, when we want to mine new block, our PoW will look for the hash that has the initial 3 characters are zeros(0) as right now our blockchain’s difficulty level is set to 3 at the time of initialization.</p>
+<p>Eg. hash</p>
+<pre><code>0002fdd96ffec46277a753fa983773599c816dcf100c956afae0a4853fd1ce32</code></pre>
+<h2 id="mine-first-block">⛏️ Mine First Block</h2>
+<p>Let’s store some data and Mine very first block of our blockchain by doing PoW.</p>
+<pre><code>[BlockShell] $ dotx hello blockchain</code></pre>
+<p>Blockshell comes with build-in command <strong>dotx</strong> which is used to create a new transaction and this will mine new block with given data (eg. hello blockchain)</p>
+<p>Output</p>
+<pre><code>[Status] Mining block (1) with PoW ...
+[ Info ] Time Elapsed : 0.0164740085602 seconds.
+[ Info ] Mined Hash : 000eea381e45c9f6c1c330cf991b5b1e7d15f739da3894b703e412881b2c2edd</code></pre>
+<p>Mining this block will depend on the difficulty level of the blockchain. Right now difficulty is of 3 and thats why our block mined in less than a second. After mining action, we received hash of that block with 3 initials as zero as difficulty is 3.</p>
+<h2 id="genesis-blocks">📦 Genesis Blocks</h2>
+<p>First block in blockchain is known as Genesis block and which is created manually at the time of blockchain development. In our case, creation of this genesis block is handled by Blockshell. When we initialized the blockchain, it also created genesis block. Lets check this out.</p>
+<h2 id="explore-blockchain">🕸️ Explore Blockchain</h2>
+<p>Now, we have 2 blocks in our blockchain. First is <strong>genesis block</strong> and other we created in previous step and that contains data <strong>hello blockchain</strong></p>
+<p>List all blocks in blockchain with following command</p>
+<pre><code>[BlockShell] $ allblocks</code></pre>
+<p>This lists hashes of all the blocks. Output</p>
+<pre><code>338a2d1ac1b8135283ae19a304b2b426b69b9caba7ef462f246fc577a0297230
+000eea381e45c9f6c1c330cf991b5b1e7d15f739da3894b703e412881b2c2edd</code></pre>
+<h2 id="ℹ-view-block-data">ℹ️ View Block Data</h2>
+<p>Let’s check what’s inside</p>
+
+  </body>
+</html>
