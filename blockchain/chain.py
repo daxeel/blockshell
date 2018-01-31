@@ -27,8 +27,6 @@ class Block:
         while self.hash[:difficulty] != "0"*difficulty:
             self.nonce += 1
             self.hash = self.calculateHash()
-            sys.stdout.write(self.hash)
-            sys.stdout.flush()
 
         endTime = time.time()
         print Back.BLUE + "[ Info ] Time Elapsed : " + str(endTime - startTime) + " seconds."
