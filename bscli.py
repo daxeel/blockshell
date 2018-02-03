@@ -42,7 +42,7 @@ def cli():
 # ============= BLOCKSHELL CLI COMMAND =============
 # ==================================================
 @cli.command()
-@click.option("--difficulty", default=3, help="Difine dufficulty level of blockchain.")
+@click.option("--difficulty", default=3, help="Define difficulty level of blockchain.")
 def init(difficulty):
     """Initialize local blockchain"""
     print """
