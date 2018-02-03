@@ -39,6 +39,10 @@ Step 3 - Activate virtual environment
 ```
 source venv/bin/activate
 ```
+or
+```
+source venv/Scripts/activate
+```
 
 Step 4 - Clone this repo
 ```
