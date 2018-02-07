@@ -64,5 +64,19 @@ Step 7 - Try "blockshell" command and test installation!
 blockshell
 ```
 
+## Just use docker
+
+after cloning, enter the blockshell directory
+
+1. Build
+  ```
+  docker build -t `basename $PWD` .
+  ```
+2. Run
+  ```
+  docker run -it --rm `basename $PWD`
+  ```
+
+
 <b>Output in terminal after calling BlockShell command</b>
 <img src="https://image.ibb.co/dRqGrw/Screen_Shot_2018_01_25_at_11_21_38_PM.png">
