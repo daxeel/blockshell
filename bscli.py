@@ -15,6 +15,8 @@ __maintainer__ = "Daxeel Soni"
 import click
 import urllib
 import json
+import sys
+
 from blockchain.chain import Block, Blockchain
 
 # ==================================================
@@ -66,7 +68,11 @@ def init(difficulty):
 
     # Start blockshell shell
     while True:
-        cmd = input("[BlockShell] $ ")
+        if sys.version_info[0] > 2:
+            cmd = input("[BlockShell] $ ")
+        else:
+            cmd = raw_input("[BlockShell] $ ")
+
         processInput(cmd)
 
 # Process input from Blockshell shell
@@ -74,7 +80,7 @@ def processInput(cmd):
     """
         Method to process user input from Blockshell CLI.
     """
-    userCmd = cmd.split(" ")[0]
+    userCmd = cmd.split()[0]
     if len(cmd) > 0:
         if userCmd in SUPPORTED_COMMANDS:
             globals()[userCmd](cmd)
