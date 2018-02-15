@@ -39,6 +39,10 @@ class Block:
             Method to calculate hash from metadata
         """
         hashData = str(self.index) + str(self.data) + self.previousHash + str(self.nonce)
+
+        if sys.version_info[0] > 2:
+            hashData = bytes(hashData, 'utf-8')
+
         return hashlib.sha256(hashData).hexdigest()
 
     def mineBlock(self, difficulty):
