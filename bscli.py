@@ -22,7 +22,9 @@ from blockchain.chain import Block, Blockchain
 # ==================================================
 SUPPORTED_COMMANDS = [
     'dotx',
+    'mineblock',
     'allblocks',
+    'mempool',
     'getblock',
     'help'
 ]
@@ -93,7 +95,29 @@ def dotx(cmd):
     if "{" in txData:
         txData = json.loads(txData)
     print "Doing transaction..."
-    coin.addBlock(Block(data=txData))
+    coin.addTx(txData)
+
+def mineblock(cmd):
+    """
+        Mine a block - Method to mine using PoW and add a block to the blockchain.
+    """
+    indices = cmd.split()[1:]
+    data = []
+    try:
+        indices = [int(x) for x in indices]
+        indices.sort()
+
+        if len(indices) > 0:
+            while len(indices) > 0:
+                data.append(coin.mempool.pop(indices.pop()))
+        else:
+            for i in range(0, len(coin.mempool)):
+                data.append(coin.mempool.pop())
+    
+        coin.addBlock(Block(data))
+    except:
+        print("Invalid block indices")
+
 
 def allblocks(cmd):
     """
@@ -102,6 +126,15 @@ def allblocks(cmd):
     print ""
     for eachBlock in coin.chain:
         print eachBlock.hash
+    print ""
+
+def mempool(cmd):
+    """
+        Method to list all pending transactions in the mempool.
+    """
+    print ""
+    for i in range(0, len(coin.mempool)):
+        print i, coin.mempool[i]
     print ""
 
 def getblock(cmd):
@@ -120,9 +153,11 @@ def help(cmd):
         Method to display supported commands in Blockshell
     """
     print "Commands:"
-    print "   dotx <transaction data>    Create new transaction"
-    print "   allblocks                  Fetch all mined blocks in blockchain"
-    print "   getblock <block hash>      Fetch information about particular block"
+    print "   dotx <transaction data>            Create new transaction"
+    print "   mineblock <transaction indices>    Adds transactions to a block and mines"
+    print "   allblocks                          Fetch all mined blocks in blockchain"
+    print "   mempool                            Fetch all pending transactions in the mempool"
+    print "   getblock <block hash>              Fetch information about particular block"
 
 def throwError(msg):
     """

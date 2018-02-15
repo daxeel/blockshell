@@ -67,12 +67,19 @@ class Blockchain:
     def __init__(self):
         self.chain = [self.createGenesisBlock()]
         self.difficulty = 3
+        self.mempool = []
 
     def createGenesisBlock(self):
         """
             Method create genesis block
         """
         return Block("Genesis Block")
+
+    def addTx(self, newTx):
+        """
+            Method to add new transaction to the mempool
+        """
+        self.mempool.append(newTx)
 
     def addBlock(self, newBlock):
         """
