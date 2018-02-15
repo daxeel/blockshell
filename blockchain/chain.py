@@ -30,7 +30,7 @@ class Block:
         self.index = index
         self.previousHash = ""
         self.data = data
-        self.timestamp = str(datetime.datetime.now())
+        self.tx_count = len(data)
         self.nonce = 0
         self.hash = self.calculateHash()
 
@@ -38,7 +38,7 @@ class Block:
         """
             Method to calculate hash from metadata
         """
-        hashData = str(self.index) + str(self.data) + self.timestamp + self.previousHash + str(self.nonce)
+        hashData = str(self.index) + str(self.data) + self.previousHash + str(self.nonce)
         return hashlib.sha256(hashData).hexdigest()
 
     def mineBlock(self, difficulty):
@@ -79,7 +79,7 @@ class Blockchain:
         """
             Method to add new transaction to the mempool
         """
-        self.mempool.append(newTx)
+        self.mempool.append("{tx:" + newTx + ", " + "timestamp:" + str(datetime.datetime.now()) + "}")
 
     def addBlock(self, newBlock):
         """

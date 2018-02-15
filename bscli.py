@@ -22,7 +22,7 @@ from blockchain.chain import Block, Blockchain
 # ==================================================
 SUPPORTED_COMMANDS = [
     'dotx',
-    'mineblock',
+    'mineblocks',
     'allblocks',
     'mempool',
     'getblock',
@@ -97,7 +97,7 @@ def dotx(cmd):
     print "Doing transaction..."
     coin.addTx(txData)
 
-def mineblock(cmd):
+def mineblocks(cmd):
     """
         Mine a block - Method to mine using PoW and add a block to the blockchain.
     """
@@ -145,7 +145,7 @@ def getblock(cmd):
     for eachBlock in coin.chain:
         if eachBlock.hash == blockHash:
             print ""
-            print eachBlock.__dict__
+            print json.dumps(eachBlock.__dict__, indent=4, sort_keys=True)
             print ""
 
 def help(cmd):
@@ -154,7 +154,7 @@ def help(cmd):
     """
     print "Commands:"
     print "   dotx <transaction data>            Create new transaction"
-    print "   mineblock <transaction indices>    Adds transactions to a block and mines"
+    print "   mineblocks <transaction indices>    Adds transactions to a block and mines"
     print "   allblocks                          Fetch all mined blocks in blockchain"
     print "   mempool                            Fetch all pending transactions in the mempool"
     print "   getblock <block hash>              Fetch information about particular block"
