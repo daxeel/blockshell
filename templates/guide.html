@@ -72,14 +72,30 @@
                     <p>In our blockchain we have Initial Zeros Proof of Work algorithm. So, when we want to mine new block, our PoW will look for the hash that has the initial 3 characters are zeros(0) as right now our blockchain's difficulty level is set to 3 at the time of initialization.</p>
                     <p>Eg. hash</p>
                     <p class="code">0002fdd96ffec46277a753fa983773599c816dcf100c956afae0a4853fd1ce32</p>
+
+<h2 id="initializenewblockchain">🆕 Send Transactions</h2>
+<p>Next, let's send some transactions.</p>
+<p class="code">[BLOCKSHELL] $ dotx "hello blockchain"</p>
+<p class="code">[BLOCKSHELL] $ dotx "my second transaction"</p>
+<p><strong>dotx</strong> sendds a transaction, and adds it to the mempool for confirmation. We can check the transactions in the mempool at any time with the <strong>mempool</strong> command. </p>
+<p class="code">[BLOCKSHELL] $ mempool <br>
+    0 {tx:"hello blockchain", timestamp:2018-02-14 21:58:11.183516} <br>
+    1 {tx:"my second transaction", timestamp:2018-02-14 21:58:17.347049}
+</p>
+
+<p class="code">0002fdd96ffec46277a753fa983773599c816dcf100c956afae0a4853fd1ce32</p>
+
+
                     <h2 id="minefirstblock">⛏️  Mine First Block</h2>
-                    <p>Let's store some data and Mine very first block of our blockchain by doing PoW.</p>
-                    <p class="code">[BlockShell] $ dotx hello blockchain</p>
-                    <p>Blockshell comes with build-in command <strong>dotx</strong> which is used to create a new transaction and this will mine new block with given data (eg. hello blockchain)</p>
+                    <p>We can then mine the very first block of our blockchain by doing PoW.</p>
+                    <p class="code">[BlockShell] $ mineblocks</p>
+                    <p><strong>mineblocks</strong> includes all transactions in the mempool in a block and mines it by default. You can also specify which transactions to include by their index number in the mempool.</p>
+                    <p class="code">[BlockShell] $ mineblocks 0 1</p>
                     <p>Output</p>
                     <p class="code">[Status] Mining block (1) with PoW ...<br>
-                        [ Info ] Time Elapsed : 0.0164740085602 seconds.<br>
-                        [ Info ] Mined Hash : 000eea381e45c9f6c1c330cf991b5b1e7d15f739da3894b703e412881b2c2edd
+                        [Status] Mining block (1) with PoW ... <br>
+                        [ Info ] Time Elapsed : 0.0139968395233 seconds. <br>
+                        [ Info ] Mined Hash : 00037e533d3835fd8e501739d294b02e96ee67fcee989ee185cb6b25e86a67cb
                     </p>
                     <p>Mining this block will depend on the difficulty level of the blockchain. Right now difficulty is of 3 and thats why our block mined in less than a second. After mining action, we received hash of that block with 3 initials as zero as difficulty is 3.</p>
                     <h2 id="genesisblocks">📦  Genesis Blocks</h2>
