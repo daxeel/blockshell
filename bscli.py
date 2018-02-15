@@ -47,7 +47,7 @@ def cli():
 @click.option("--difficulty", default=3, help="Define difficulty level of blockchain.")
 def init(difficulty):
     """Initialize local blockchain"""
-    print """
+    print("""
   ____    _                  _       _____   _              _   _
  |  _ \  | |                | |     / ____| | |            | | | |
  | |_) | | |   ___     ___  | | __ | (___   | |__     ___  | | | |
@@ -59,14 +59,14 @@ def init(difficulty):
  > Type 'help' to see supported commands.
  > Project by Daxeel Soni - https://daxeel.github.io
 
-    """
+    """)
 
     # Set difficulty of blockchain
     coin.difficulty = difficulty
 
     # Start blockshell shell
     while True:
-        cmd = raw_input("[BlockShell] $ ")
+        cmd = input("[BlockShell] $ ")
         processInput(cmd)
 
 # Process input from Blockshell shell
@@ -94,7 +94,7 @@ def dotx(cmd):
     txData = cmd.split("dotx ")[-1]
     if "{" in txData:
         txData = json.loads(txData)
-    print "Doing transaction..."
+    print("Doing transaction...")
     coin.addTx(txData)
 
 def mineblocks(cmd):
@@ -123,19 +123,19 @@ def allblocks(cmd):
     """
         Method to list all mined blocks.
     """
-    print ""
+    print("")
     for eachBlock in coin.chain:
-        print eachBlock.hash
-    print ""
+        print(eachBlock.hash)
+    print("")
 
 def mempool(cmd):
     """
         Method to list all pending transactions in the mempool.
     """
-    print ""
+    print("")
     for i in range(0, len(coin.mempool)):
-        print i, coin.mempool[i]
-    print ""
+        print(i, coin.mempool[i])
+    print("")
 
 def getblock(cmd):
     """
@@ -144,23 +144,23 @@ def getblock(cmd):
     blockHash = cmd.split(" ")[-1]
     for eachBlock in coin.chain:
         if eachBlock.hash == blockHash:
-            print ""
-            print json.dumps(eachBlock.__dict__, indent=4, sort_keys=True)
-            print ""
+            print("")
+            print(json.dumps(eachBlock.__dict__, indent=4, sort_keys=True))
+            print("")
 
 def help(cmd):
     """
         Method to display supported commands in Blockshell
     """
-    print "Commands:"
-    print "   dotx <transaction data>            Create new transaction"
-    print "   mineblocks <transaction indices>    Adds transactions to a block and mines"
-    print "   allblocks                          Fetch all mined blocks in blockchain"
-    print "   mempool                            Fetch all pending transactions in the mempool"
-    print "   getblock <block hash>              Fetch information about particular block"
+    print("Commands:")
+    print("   dotx <transaction data>            Create new transaction")
+    print("   mineblocks <transaction indices>    Adds transactions to a block and mines")
+    print("   allblocks                          Fetch all mined blocks in blockchain")
+    print("   mempool                            Fetch all pending transactions in the mempool")
+    print("   getblock <block hash>              Fetch information about particular block")
 
 def throwError(msg):
     """
         Method to throw an error from Blockshell.
     """
-    print "Error : " + msg
+    print("Error : " + msg)

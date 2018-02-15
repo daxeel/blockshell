@@ -45,7 +45,7 @@ class Block:
         """
             Method for Proof of Work
         """
-        print Back.RED + "\n[Status] Mining block (" + str(self.index) + ") with PoW ..."
+        print(Back.RED + "\n[Status] Mining block (" + str(self.index) + ") with PoW ...")
         startTime = time.time()
 
         while self.hash[:difficulty] != "0"*difficulty:
@@ -53,9 +53,9 @@ class Block:
             self.hash = self.calculateHash()
 
         endTime = time.time()
-        print Back.BLUE + "[ Info ] Time Elapsed : " + str(endTime - startTime) + " seconds."
-        print Back.BLUE + "[ Info ] Mined Hash : " + self.hash
-        print Style.RESET_ALL
+        print(Back.BLUE + "[ Info ] Time Elapsed : " + str(endTime - startTime) + " seconds.")
+        print(Back.BLUE + "[ Info ] Mined Hash : " + self.hash)
+        print(Style.RESET_ALL)
 
 # ==================================================
 # ================ BLOCKCHAIN CLASS ================
