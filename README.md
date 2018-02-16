@@ -46,7 +46,7 @@ source venv/Scripts/activate
 
 Step 4 - Clone this repo
 ```
-git clone https://github.com/daxeel/blockshell.git
+git clone https://github.com/rustielin/blockshell.git
 ```
 
 Step 5 - Change directory to cloned one
@@ -61,7 +61,8 @@ pip install --editable .
 
 Step 7 - Try "blockshell" command and test installation!
 ```
-blockshell
+blockshell help
+blockshell init
 ```
 
 <b>Output in terminal after calling BlockShell command</b>
