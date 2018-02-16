@@ -59,7 +59,7 @@ def init(difficulty):
 
  > A command line utility for learning Blockchain concepts.
  > Type 'help' to see supported commands.
- > Project by Daxeel Soni - https://daxeel.github.io
+ > Project by Daxeel Soni and Rustie Lin
 
     """)
 
