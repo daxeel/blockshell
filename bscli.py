@@ -15,6 +15,7 @@ __maintainer__ = "Daxeel Soni"
 import click
 import urllib
 import json
+import sys
 from blockchain.chain import Block, Blockchain
 
 # ==================================================
@@ -62,9 +63,14 @@ def init(difficulty):
     # Set difficulty of blockchain
     coin.difficulty = difficulty
 
+    # Set get_input function according to python version
+    get_input = input
+    if sys.version_info[:2] <= (2, 7):
+        get_input = raw_input
+
     # Start blockshell shell
     while True:
-        cmd = input("[BlockShell] $ ")
+        cmd = get_input("[BlockShell] $ ")
         processInput(cmd)
 
 # Process input from Blockshell shell
