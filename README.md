@@ -1,4 +1,4 @@
-📖 README.md just includes installation guide. You can find detailed guide in this <a href="https://github.com/daxeel/blockshell/wiki/Get-Started-with-BlockShell" target="_blank">wiki page</a>
+📖 README.md just includes installation guide. You can find detailed guide in this <a href="https://github.com/rustielin/blockshell/wiki/Get-Started-with-BlockShell" target="_blank">wiki page</a>
 
 # BlockShell
 A command line utility for learning Blockchain technical concepts likechaining, mining, proof of work etc.

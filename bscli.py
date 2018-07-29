@@ -23,8 +23,8 @@ from blockchain.chain import Block, Blockchain
 # ===== SUPPORTED COMMANDS LIST IN BLOCKSHELL ======
 # ==================================================
 SUPPORTED_COMMANDS = [
-    'dotx',
-    'mineblocks',
+    'sendtx',
+    'mineblock',
     'allblocks',
     'mempool',
     'getblock',
@@ -59,7 +59,7 @@ def init(difficulty):
 
  > A command line utility for learning Blockchain concepts.
  > Type 'help' to see supported commands.
- > Project by Daxeel Soni and Rustie Lin
+ > Project by Daxeel Soni, edits and additional features by Rustie Lin
 
     """)
 
@@ -93,17 +93,17 @@ def processInput(cmd):
 # ==================================================
 # =========== BLOCKSHELL COMMAND METHODS ===========
 # ==================================================
-def dotx(cmd):
+def sendtx(cmd):
     """
-        Do Transaction - Method to perform new transaction on blockchain.
+        Send Transaction - Method to perform new transaction on blockchain.
     """
-    txData = cmd.split("dotx ")[-1]
+    txData = cmd.split("sendtx ")[-1]
     if "{" in txData:
         txData = json.loads(txData)
-    print("Doing transaction...")
+    print("Sending transaction...")
     coin.addTx(txData)
 
-def mineblocks(cmd):
+def mineblock(cmd):
     """
         Mine a block - Method to mine using PoW and add a block to the blockchain.
     """
@@ -114,15 +114,15 @@ def mineblocks(cmd):
         indices.sort()
 
         if len(indices) > 0:
-            while len(indices) > 0:
+            while indices:
                 data.append(coin.mempool.pop(indices.pop()))
         else:
-            for i in range(0, len(coin.mempool)):
+            while coin.mempool:
                 data.append(coin.mempool.pop())
-    
+
         coin.addBlock(Block(data))
     except:
-        print("Invalid block indices")
+        throwError("Invalid block indices")
 
 
 def allblocks(cmd):
@@ -159,8 +159,8 @@ def help(cmd):
         Method to display supported commands in Blockshell
     """
     print("Commands:")
-    print("   dotx <transaction data>            Create new transaction")
-    print("   mineblocks <transaction indices>    Adds transactions to a block and mines")
+    print("   sendtx <transaction data>          Send new transaction")
+    print("   mineblocks [transaction indices]   Adds transactions to a block and mines")
     print("   allblocks                          Fetch all mined blocks in blockchain")
     print("   mempool                            Fetch all pending transactions in the mempool")
     print("   getblock <block hash>              Fetch information about particular block")

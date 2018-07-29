@@ -33,6 +33,7 @@ class Block:
         self.tx_count = len(data)
         self.nonce = 0
         self.hash = self.calculateHash()
+        self.timestamp = str(datetime.datetime.now())
 
     def calculateHash(self):
         """
@@ -55,6 +56,7 @@ class Block:
         while self.hash[:difficulty] != "0"*difficulty:
             self.nonce += 1
             self.hash = self.calculateHash()
+            self.timestamp = str(datetime.datetime.now())
 
         endTime = time.time()
         print(Back.BLUE + "[ Info ] Time Elapsed : " + str(endTime - startTime) + " seconds.")
@@ -77,7 +79,7 @@ class Blockchain:
         """
             Method create genesis block
         """
-        return Block("Genesis Block")
+        return Block(["Genesis Block"])
 
     def addTx(self, newTx):
         """
@@ -99,7 +101,7 @@ class Blockchain:
         """
             Method to write new mined block to blockchain
         """
-        dataFile = file("chain.txt", "w")
+        dataFile = open("chain.txt", "w")
         chainData = []
         for eachBlock in self.chain:
             chainData.append(eachBlock.__dict__)
