@@ -1,3 +1,4 @@
+*.vscode
 *.pyc
 chain.txt
 venv/

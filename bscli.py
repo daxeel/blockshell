@@ -93,7 +93,8 @@ def dotx(cmd):
     if "{" in txData:
         txData = json.loads(txData)
     print "Doing transaction..."
-    coin.addBlock(Block(data=txData))
+    datas = txData.split(" ")
+    coin.addBlock(Block(datas[0], datas[1], datas[2], datas[3], datas[4]))
 
 def allblocks(cmd):
     """
