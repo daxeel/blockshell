@@ -39,13 +39,13 @@ class Block:
             Method to calculate hash from metadata
         """
         hashData = str(self.index) + str(self.data) + self.timestamp + self.previousHash + str(self.nonce)
-        return hashlib.sha256(hashData).hexdigest()
+        return hashlib.sha256(hashData.encode("utf8")).hexdigest()
 
     def mineBlock(self, difficulty):
         """
             Method for Proof of Work
         """
-        print Back.RED + "\n[Status] Mining block (" + str(self.index) + ") with PoW ..."
+        print(Back.RED + "\n[Status] Mining block (" + str(self.index) + ") with PoW ...")
         startTime = time.time()
 
         while self.hash[:difficulty] != "0"*difficulty:
@@ -53,9 +53,9 @@ class Block:
             self.hash = self.calculateHash()
 
         endTime = time.time()
-        print Back.BLUE + "[ Info ] Time Elapsed : " + str(endTime - startTime) + " seconds."
-        print Back.BLUE + "[ Info ] Mined Hash : " + self.hash
-        print Style.RESET_ALL
+        print(Back.BLUE + "[ Info ] Time Elapsed : " + str(endTime - startTime) + " seconds.")
+        print(Back.BLUE + "[ Info ] Mined Hash : " + self.hash)
+        print(Style.RESET_ALL)
 
 # ==================================================
 # ================ BLOCKCHAIN CLASS ================
@@ -88,7 +88,7 @@ class Blockchain:
         """
             Method to write new mined block to blockchain
         """
-        dataFile = file("chain.txt", "w")
+        dataFile = open("chain.txt", "w")
         chainData = []
         for eachBlock in self.chain:
             chainData.append(eachBlock.__dict__)
