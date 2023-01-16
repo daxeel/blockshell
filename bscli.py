@@ -6,14 +6,13 @@ __author__ = "Daxeel Soni"
 __url__ = "https://daxeel.github.io"
 __email__ = "daxeelsoni44@gmail.com"
 __license__ = "MIT"
-__version__ = "0.1"
-__maintainer__ = "Daxeel Soni"
+__version__ = "0.11"
+__maintainer__ = "Tymoteusz Ciesielski"
 
 # ==================================================
 # ================= IMPORT MODULES =================
 # ==================================================
 import click
-import urllib
 import json
 from blockchain.chain import Block, Blockchain
 
@@ -30,6 +29,7 @@ SUPPORTED_COMMANDS = [
 # Init blockchain
 coin = Blockchain()
 
+
 # Create group of commands
 @click.group()
 def cli():
@@ -38,6 +38,7 @@ def cli():
     """
     pass
 
+
 # ==================================================
 # ============= BLOCKSHELL CLI COMMAND =============
 # ==================================================
@@ -45,7 +46,7 @@ def cli():
 @click.option("--difficulty", default=3, help="Define difficulty level of blockchain.")
 def init(difficulty):
     """Initialize local blockchain"""
-    print """
+    print("""
   ____    _                  _       _____   _              _   _
  |  _ \  | |                | |     / ____| | |            | | | |
  | |_) | | |   ___     ___  | | __ | (___   | |__     ___  | | | |
@@ -57,15 +58,16 @@ def init(difficulty):
  > Type 'help' to see supported commands.
  > Project by Daxeel Soni - https://daxeel.github.io
 
-    """
+    """)
 
     # Set difficulty of blockchain
     coin.difficulty = difficulty
 
     # Start blockshell shell
     while True:
-        cmd = raw_input("[BlockShell] $ ")
+        cmd = input("[BlockShell] $ ")
         processInput(cmd)
+
 
 # Process input from Blockshell shell
 def processInput(cmd):
@@ -92,17 +94,19 @@ def dotx(cmd):
     txData = cmd.split("dotx ")[-1]
     if "{" in txData:
         txData = json.loads(txData)
-    print "Doing transaction..."
+    print("Doing transaction...")
     coin.addBlock(Block(data=txData))
+
 
 def allblocks(cmd):
     """
         Method to list all mined blocks.
     """
-    print ""
+    print("")
     for eachBlock in coin.chain:
-        print eachBlock.hash
-    print ""
+        print(eachBlock.hash)
+    print("")
+
 
 def getblock(cmd):
     """
@@ -111,21 +115,23 @@ def getblock(cmd):
     blockHash = cmd.split(" ")[-1]
     for eachBlock in coin.chain:
         if eachBlock.hash == blockHash:
-            print ""
-            print eachBlock.__dict__
-            print ""
+            print("")
+            print(eachBlock.__dict__)
+            print("")
+
 
 def help(cmd):
     """
         Method to display supported commands in Blockshell
     """
-    print "Commands:"
-    print "   dotx <transaction data>    Create new transaction"
-    print "   allblocks                  Fetch all mined blocks in blockchain"
-    print "   getblock <block hash>      Fetch information about particular block"
+    print("Commands:")
+    print("   dotx <transaction data>    Create new transaction")
+    print("   allblocks                  Fetch all mined blocks in blockchain")
+    print("   getblock <block hash>      Fetch information about particular block")
+
 
 def throwError(msg):
     """
         Method to throw an error from Blockshell.
     """
-    print "Error : " + msg
+    print("Error : " + msg)
